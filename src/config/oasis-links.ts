@@ -1,18 +1,22 @@
 export type ServiceIcon = "sparkles" | "ticket" | "briefcase";
 export type SocialNetwork = "instagram" | "tiktok" | "youtube" | "x" | "linkedin";
 
-const publicUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://flypremium.com.br/oasis";
+const officialWebsiteUrl = "https://flypremium.com.br/oasis/";
+const publicUrl = process.env.NEXT_PUBLIC_SITE_URL ?? officialWebsiteUrl;
+const whatsappPhone = "5541987711041";
+const whatsappMessage =
+  "Olá, quero solicitar uma cotação de viagem com a Oasis. Podem me ajudar?";
 
 export const oasisConfig = {
   publicUrl,
   brand: {
-    name: "Oasis | Viagens e Milhas",
+    name: "Oasis | Viagens e Experiências",
     eyebrow: "Fly Premium Oasis",
     logoSrc: "/assets/oasis/logo.png",
     logoAlt: "Oasis",
   },
   seo: {
-    title: "Oasis | Viagens e Milhas",
+    title: "Oasis | Viagens e Experiências",
     description:
       "Viagens premium pelo caminho mais inteligente: milhas, tarifas, operadoras e consolidadoras.",
     ogImage: "/og/oasis.png",
@@ -25,18 +29,30 @@ export const oasisConfig = {
   actions: {
     whatsapp: {
       label: "Solicitar cotação",
-      description: "Atendimento rápido pelo WhatsApp",
-      href: "https://wa.me/41987711041",
+      description: "Atendimento pelo WhatsApp",
+      href: `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessage)}`,
     },
     website: {
       label: "Conhecer o site oficial",
-      href: "https://flypremium.com.br/oasis",
+      href: officialWebsiteUrl,
     },
   },
   services: [
-    { label: "Milhas", icon: "sparkles" as ServiceIcon },
-    { label: "Tarifas", icon: "ticket" as ServiceIcon },
-    { label: "Operadoras", icon: "briefcase" as ServiceIcon },
+    {
+      title: "Melhor caminho",
+      description: "Milhas, tarifas, operadoras e consolidadoras comparadas para você.",
+      icon: "sparkles" as ServiceIcon,
+    },
+    {
+      title: "Viagem sob medida",
+      description: "Aéreo, hospedagem e experiências alinhadas ao seu perfil.",
+      icon: "ticket" as ServiceIcon,
+    },
+    {
+      title: "Suporte humano",
+      description: "Acompanhamento antes, durante e depois da viagem.",
+      icon: "briefcase" as ServiceIcon,
+    },
   ],
   cadastur: {
     logoSrc: "/assets/oasis/cadastur-logo.svg",
@@ -80,7 +96,7 @@ export const oasisConfig = {
     },
   ],
   share: {
-    title: "Oasis | Viagens e Milhas",
+    title: "Oasis | Viagens e Experiências",
     text: "Viagens premium pelo caminho mais inteligente.",
   },
 } as const;

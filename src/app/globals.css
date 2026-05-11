@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -172,8 +172,7 @@ h1 {
 
 .primary-action,
 .secondary-action,
-.social-link,
-.footer button {
+.social-link {
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -204,8 +203,7 @@ h1 {
 
 .primary-action:focus-visible,
 .secondary-action:focus-visible,
-.social-link:focus-visible,
-.footer button:focus-visible {
+.social-link:focus-visible {
   outline: 3px solid rgba(213, 168, 80, 0.42);
   outline-offset: 3px;
 }
@@ -264,29 +262,52 @@ h1 {
 
 .services {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   padding: 0 22px 22px;
 }
 
-.services span {
+.service-card {
   display: grid;
-  min-height: 64px;
-  place-items: center;
-  gap: 6px;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  align-items: center;
+  min-height: 76px;
   border: 1px solid var(--line-light);
   border-radius: 8px;
+  padding: 12px;
   background: rgba(255, 255, 255, 0.045);
   color: var(--cream);
-  font-size: 0.82rem;
-  font-weight: 760;
-  text-align: center;
+  text-align: left;
 }
 
-.services svg {
-  width: 18px;
-  height: 18px;
+.service-card > svg {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  padding: 11px;
+  background: rgba(213, 168, 80, 0.12);
   color: var(--gold);
+}
+
+.service-card span,
+.service-card strong,
+.service-card small {
+  display: block;
+  min-width: 0;
+}
+
+.service-card strong {
+  color: var(--white);
+  font-size: 0.94rem;
+  line-height: 1.2;
+}
+
+.service-card small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 560;
+  line-height: 1.35;
 }
 
 .cadastur-seal {
@@ -448,30 +469,13 @@ h1 {
 .footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: center;
   border-top: 1px solid var(--line-dark);
   background: var(--cream);
   color: #667063;
   padding: 16px 22px 20px;
   font-size: 0.84rem;
-}
-
-.footer button {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  border: 1px solid rgba(11, 17, 16, 0.14);
-  border-radius: 8px;
-  padding: 9px 12px;
-  background: rgba(255, 255, 255, 0.74);
-  color: var(--ink);
-  cursor: pointer;
-}
-
-.footer svg {
-  width: 15px;
-  height: 15px;
+  text-align: center;
 }
 
 .toast {
@@ -565,9 +569,15 @@ h1 {
     height: 44px;
   }
 
-  .services span {
-    min-height: 58px;
-    font-size: 0.78rem;
+  .service-card {
+    min-height: 72px;
+    grid-template-columns: 39px 1fr;
+  }
+
+  .service-card > svg {
+    width: 39px;
+    height: 39px;
+    padding: 10px;
   }
 
   .cadastur-seal {
@@ -603,4 +613,3 @@ h1 {
     display: none;
   }
 }
-

@@ -7,7 +7,10 @@
     "lint": "eslint src next.config.mjs tailwind.config.ts --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test:e2e": "npm run build && playwright test",
+    "test:e2e:ui": "npm run build && playwright test --ui",
+    "check": "npm run lint && npm run typecheck && npm run test:e2e"
   },
   "dependencies": {
     "lucide-react": "0.468.0",
@@ -16,6 +19,7 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@playwright/test": "1.59.1",
     "@types/node": "22.10.2",
     "@types/react": "18.3.17",
     "@types/react-dom": "18.3.5",

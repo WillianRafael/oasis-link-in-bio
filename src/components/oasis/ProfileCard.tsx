@@ -25,9 +25,8 @@ export function ProfileCard({ config }: ProfileCardProps) {
           <Image src={config.brand.logoSrc} alt={config.brand.logoAlt} width={76} height={76} priority />
         </a>
         <ShareButton
-          mode="share"
           className="share-button"
-          ariaLabel="Compartilhar página"
+          ariaLabel="Compartilhar agregador"
           share={config.share}
           url={config.publicUrl}
         />
@@ -41,14 +40,6 @@ export function ProfileCard({ config }: ProfileCardProps) {
 
       <footer className="footer">
         <span>{config.brand.name}</span>
-        <ShareButton
-          mode="copy"
-          className="copy-button"
-          share={config.share}
-          url={config.publicUrl}
-        >
-          Copiar link
-        </ShareButton>
       </footer>
     </section>
   );

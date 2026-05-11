@@ -10,7 +10,8 @@ const serviceIcons = {
 
 type ServiceBadgesProps = {
   services: readonly {
-    label: string;
+    title: string;
+    description: string;
     icon: ServiceIcon;
   }[];
 };
@@ -22,10 +23,13 @@ export function ServiceBadges({ services }: ServiceBadgesProps) {
         const Icon = serviceIcons[service.icon];
 
         return (
-          <span key={service.label}>
+          <article className="service-card" key={service.title}>
             <Icon aria-hidden="true" />
-            {service.label}
-          </span>
+            <span>
+              <strong>{service.title}</strong>
+              <small>{service.description}</small>
+            </span>
+          </article>
         );
       })}
     </div>

@@ -11,6 +11,10 @@ yarn-error.log*
 pnpm-debug.log*
 *.log
 lighthouse-report.json
+playwright-report
+test-results
 preview-*.png
+meta-*.png
+chatwoot-*.png
 *.7z
 *.tsbuildinfo

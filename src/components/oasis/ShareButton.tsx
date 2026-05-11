@@ -1,11 +1,10 @@
 "use client";
 
-import { Copy, Share2 } from "lucide-react";
+import { Share2 } from "lucide-react";
 import { type ReactNode, useRef, useState } from "react";
 import { Toast } from "./Toast";
 
 type ShareButtonProps = {
-  mode: "share" | "copy";
   url: string;
   share: {
     title: string;
@@ -16,9 +15,19 @@ type ShareButtonProps = {
   children?: ReactNode;
 };
 
-export function ShareButton({ mode, url, share, className, ariaLabel, children }: ShareButtonProps) {
+export function ShareButton({ url, share, className, ariaLabel, children }: ShareButtonProps) {
   const [toast, setToast] = useState({ message: "Link copiado", visible: false });
   const timeoutRef = useRef<number | null>(null);
+
+  function getPageUrl() {
+    if (typeof window === "undefined") {
+      return url;
+    }
+
+    const currentUrl = new URL(window.location.href);
+    currentUrl.hash = "";
+    return currentUrl.toString();
+  }
 
   function showToast(message: string) {
     setToast({ message, visible: true });
@@ -32,7 +41,7 @@ export function ShareButton({ mode, url, share, className, ariaLabel, children }
 
   async function copyLink() {
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(getPageUrl());
       showToast("Link copiado");
     } catch {
       showToast("Não foi possível copiar");
@@ -40,12 +49,14 @@ export function ShareButton({ mode, url, share, className, ariaLabel, children }
   }
 
   async function handleClick() {
-    if (mode === "share" && navigator.share) {
+    const pageUrl = getPageUrl();
+
+    if (navigator.share) {
       try {
         await navigator.share({
           title: share.title,
           text: share.text,
-          url,
+          url: pageUrl,
         });
         return;
       } catch (error) {
@@ -61,7 +72,7 @@ export function ShareButton({ mode, url, share, className, ariaLabel, children }
   return (
     <>
       <button className={className} type="button" aria-label={ariaLabel} onClick={handleClick}>
-        {mode === "share" ? <Share2 aria-hidden="true" /> : <Copy aria-hidden="true" />}
+        <Share2 aria-hidden="true" />
         {children}
       </button>
       <Toast message={toast.message} visible={toast.visible} />
