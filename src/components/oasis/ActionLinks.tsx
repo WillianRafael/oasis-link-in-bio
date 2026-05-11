@@ -1,4 +1,5 @@
 import { ArrowUpRight, Globe2, MessageCircle } from "lucide-react";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 
 type ActionLinksProps = {
   actions: {
@@ -18,7 +19,19 @@ type ActionLinksProps = {
 export function ActionLinks({ actions }: ActionLinksProps) {
   return (
     <section className="actions" aria-label="Ações principais">
-      <a className="primary-action" href={actions.whatsapp.href} target="_blank" rel="noopener noreferrer">
+      <TrackedLink
+        className="primary-action"
+        href={actions.whatsapp.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        analytics={{
+          eventName: "click_whatsapp",
+          linkId: "whatsapp",
+          linkText: actions.whatsapp.label,
+          linkUrl: actions.whatsapp.href,
+          placement: "primary_action",
+        }}
+      >
         <span className="action-icon">
           <MessageCircle aria-hidden="true" />
         </span>
@@ -27,9 +40,21 @@ export function ActionLinks({ actions }: ActionLinksProps) {
           <small>{actions.whatsapp.description}</small>
         </span>
         <ArrowUpRight aria-hidden="true" />
-      </a>
+      </TrackedLink>
 
-      <a className="secondary-action" href={actions.website.href} target="_blank" rel="noopener noreferrer">
+      <TrackedLink
+        className="secondary-action"
+        href={actions.website.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        analytics={{
+          eventName: "click_official_site",
+          linkId: "official_site",
+          linkText: actions.website.label,
+          linkUrl: actions.website.href,
+          placement: "secondary_action",
+        }}
+      >
         <span className="action-icon secondary-icon">
           <Globe2 aria-hidden="true" />
         </span>
@@ -38,7 +63,7 @@ export function ActionLinks({ actions }: ActionLinksProps) {
           <small>{actions.website.description}</small>
         </span>
         <ArrowUpRight aria-hidden="true" />
-      </a>
+      </TrackedLink>
     </section>
   );
 }

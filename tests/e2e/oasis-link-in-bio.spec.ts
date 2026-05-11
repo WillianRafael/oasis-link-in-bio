@@ -31,13 +31,16 @@ test.describe("Oasis link-in-bio", () => {
       "href",
       /https:\/\/wa\.me\/5541987711041\?text=Ol%C3%A1/,
     );
+    await expect(whatsapp).toHaveAttribute("data-analytics-id", "whatsapp");
     await expect(whatsapp).toHaveAttribute("target", "_blank");
     await expect(whatsapp).toHaveAttribute("rel", "noopener noreferrer");
 
-    await expect(page.getByRole("link", { name: /Conhecer o site oficial/i })).toHaveAttribute(
+    const officialSite = page.getByRole("link", { name: /Conhecer o site oficial/i });
+    await expect(officialSite).toHaveAttribute(
       "href",
       "https://oasisflypremium.wr3solutions.com/",
     );
+    await expect(officialSite).toHaveAttribute("data-analytics-id", "official_site");
     await expect(page.getByText("Veja a agência, serviços e experiências")).toBeVisible();
   });
 
@@ -76,19 +79,24 @@ test.describe("Oasis link-in-bio", () => {
       "href",
       "https://www.instagram.com/flypremium.oasis",
     );
+    await expect(page.getByRole("link", { name: /Instagram/i })).toHaveAttribute("data-analytics-id", "instagram");
     await expect(page.getByRole("link", { name: /TikTok/i })).toHaveAttribute(
       "href",
       "https://www.tiktok.com/@flypremium.oasis",
     );
+    await expect(page.getByRole("link", { name: /TikTok/i })).toHaveAttribute("data-analytics-id", "tiktok");
     await expect(page.getByRole("link", { name: /YouTube/i })).toHaveAttribute(
       "href",
       "https://www.youtube.com/@FlyPremiumOasis?sub_confirmation=1",
     );
+    await expect(page.getByRole("link", { name: /YouTube/i })).toHaveAttribute("data-analytics-id", "youtube");
     await expect(page.getByRole("link", { name: /^X/i })).toHaveAttribute("href", "https://x.com/flypremiumoasis");
+    await expect(page.getByRole("link", { name: /^X/i })).toHaveAttribute("data-analytics-id", "x");
     await expect(page.getByRole("link", { name: /LinkedIn/i })).toHaveAttribute(
       "href",
       "https://www.linkedin.com/in/flypremium-oasis/",
     );
+    await expect(page.getByRole("link", { name: /LinkedIn/i })).toHaveAttribute("data-analytics-id", "linkedin");
   });
 
   test("does not overflow horizontally on a narrow mobile viewport", async ({ page }) => {

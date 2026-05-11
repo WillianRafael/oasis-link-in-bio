@@ -2,6 +2,7 @@
 
 import { Share2 } from "lucide-react";
 import { type ReactNode, useRef, useState } from "react";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 import { Toast } from "./Toast";
 
 type ShareButtonProps = {
@@ -42,6 +43,9 @@ export function ShareButton({ url, share, className, ariaLabel, children }: Shar
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(getPageUrl());
+      trackAnalyticsEvent("share_link_copied", {
+        placement: "profile_top",
+      });
       showToast("Link copiado");
     } catch {
       showToast("Não foi possível copiar");
@@ -50,6 +54,9 @@ export function ShareButton({ url, share, className, ariaLabel, children }: Shar
 
   async function handleClick() {
     const pageUrl = getPageUrl();
+    trackAnalyticsEvent("click_share", {
+      placement: "profile_top",
+    });
 
     if (navigator.share) {
       try {
@@ -57,6 +64,9 @@ export function ShareButton({ url, share, className, ariaLabel, children }: Shar
           title: share.title,
           text: share.text,
           url: pageUrl,
+        });
+        trackAnalyticsEvent("share_native_completed", {
+          placement: "profile_top",
         });
         return;
       } catch (error) {

@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import type { SocialNetwork } from "@/config/oasis-links";
 
 type SocialLinksProps = {
@@ -73,14 +74,27 @@ export function SocialLinks({ intro, socials }: SocialLinksProps) {
 
       <div className="social-list">
         {socials.map((social) => (
-          <a className="social-link" href={social.href} target="_blank" rel="noopener noreferrer" key={social.network}>
+          <TrackedLink
+            className="social-link"
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={social.network}
+            analytics={{
+              eventName: `click_${social.network}`,
+              linkId: social.network,
+              linkText: social.label,
+              linkUrl: social.href,
+              placement: "social_links",
+            }}
+          >
             <SocialIcon network={social.network} />
             <span>
               <strong>{social.label}</strong>
               <small>{social.handle}</small>
             </span>
             <ChevronRight aria-hidden="true" />
-          </a>
+          </TrackedLink>
         ))}
       </div>
     </section>

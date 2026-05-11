@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { AnalyticsProviders } from "@/components/analytics/AnalyticsProviders";
 import { oasisConfig } from "@/config/oasis-links";
 import "./globals.css";
 
@@ -49,7 +50,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        {children}
+        <AnalyticsProviders />
+      </body>
     </html>
   );
 }

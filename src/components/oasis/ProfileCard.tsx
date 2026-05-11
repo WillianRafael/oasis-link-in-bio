@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import type { OasisConfig } from "@/config/oasis-links";
 import { ActionLinks } from "./ActionLinks";
 import { CadasturSeal } from "./CadasturSeal";
@@ -15,15 +16,22 @@ export function ProfileCard({ config }: ProfileCardProps) {
   return (
     <section className="profile" aria-labelledby="profile-title">
       <div className="profile-top">
-        <a
+        <TrackedLink
           className="logo-link"
           href={config.actions.website.href}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Abrir site da Oasis"
+          analytics={{
+            eventName: "click_logo",
+            linkId: "logo",
+            linkText: "Logo Oasis",
+            linkUrl: config.actions.website.href,
+            placement: "profile_top",
+          }}
         >
           <Image src={config.brand.logoSrc} alt={config.brand.logoAlt} width={76} height={76} priority />
-        </a>
+        </TrackedLink>
         <ShareButton
           className="share-button"
           ariaLabel="Compartilhar agregador"

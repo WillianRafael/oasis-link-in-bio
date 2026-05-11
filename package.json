@@ -13,6 +13,7 @@
     "check": "npm run lint && npm run typecheck && npm run test:e2e"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "lucide-react": "0.468.0",
     "next": "16.2.6",
     "react": "18.3.1",
