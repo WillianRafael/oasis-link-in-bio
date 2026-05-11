@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+dist
+.vercel
+.env*
+!.env.example
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+lighthouse-report.json
+preview-*.png
+*.7z
+*.tsbuildinfo
