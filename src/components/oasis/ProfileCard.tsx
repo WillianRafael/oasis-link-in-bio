@@ -39,7 +39,7 @@ export function ProfileCard({ config }: ProfileCardProps) {
       <SocialLinks intro={config.socialIntro} socials={config.socials} />
 
       <footer className="footer">
-        <span>{config.brand.name}</span>
+        <span>{config.brand.footer}</span>
       </footer>
     </section>
   );

@@ -84,7 +84,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 22px 6px;
+  padding: 24px 24px 8px;
 }
 
 .logo-link {
@@ -134,7 +134,7 @@ button {
 }
 
 .hero {
-  padding: 26px 22px 22px;
+  padding: 30px 24px 24px;
 }
 
 .eyebrow {
@@ -150,24 +150,24 @@ h1 {
   margin: 0;
   color: var(--white);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.86rem;
+  font-size: 2.54rem;
   font-weight: 500;
-  line-height: 0.98;
+  line-height: 1.05;
   text-wrap: balance;
 }
 
 .hero p:last-child {
-  margin: 16px 0 0;
+  margin: 18px 0 0;
   color: var(--muted);
-  font-size: 1rem;
-  font-weight: 560;
-  line-height: 1.55;
+  font-size: 0.98rem;
+  font-weight: 540;
+  line-height: 1.58;
 }
 
 .actions {
   display: grid;
-  gap: 10px;
-  padding: 0 22px 18px;
+  gap: 11px;
+  padding: 0 24px 22px;
 }
 
 .primary-action,
@@ -185,7 +185,7 @@ h1 {
   grid-template-columns: 48px 1fr auto;
   gap: 14px;
   align-items: center;
-  min-height: 86px;
+  min-height: 84px;
   border: 1px solid rgba(252, 245, 224, 0.2);
   border-radius: 8px;
   padding: 14px;
@@ -262,30 +262,30 @@ h1 {
 
 .services {
   display: grid;
-  gap: 8px;
-  padding: 0 22px 22px;
+  gap: 10px;
+  padding: 0 24px 24px;
 }
 
 .service-card {
   display: grid;
-  grid-template-columns: 42px 1fr;
-  gap: 12px;
+  grid-template-columns: 38px 1fr;
+  gap: 11px;
   align-items: center;
-  min-height: 76px;
-  border: 1px solid var(--line-light);
+  min-height: 72px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 8px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.045);
+  padding: 11px 12px;
+  background: rgba(255, 255, 255, 0.035);
   color: var(--cream);
   text-align: left;
 }
 
 .service-card > svg {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border-radius: 8px;
-  padding: 11px;
-  background: rgba(213, 168, 80, 0.12);
+  padding: 10px;
+  background: rgba(213, 168, 80, 0.1);
   color: var(--gold);
 }
 
@@ -305,30 +305,30 @@ h1 {
 .service-card small {
   margin-top: 3px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 560;
   line-height: 1.35;
 }
 
 .cadastur-seal {
   display: grid;
-  gap: 8px;
+  gap: 5px;
   justify-items: center;
-  margin: 0 22px 22px;
-  border: 1px solid rgba(213, 168, 80, 0.4);
+  margin: 0 24px 22px;
+  border: 1px solid rgba(213, 168, 80, 0.18);
   border-radius: 8px;
-  padding: 12px 14px 13px;
+  padding: 7px 10px 8px;
   background:
-    linear-gradient(135deg, rgba(213, 168, 80, 0.14), rgba(255, 255, 255, 0.04)),
-    rgba(255, 255, 255, 0.04);
+    linear-gradient(135deg, rgba(213, 168, 80, 0.045), rgba(255, 255, 255, 0.015)),
+    rgba(255, 255, 255, 0.015);
 }
 
 .cadastur-logo-card {
   display: inline-flex;
-  width: min(286px, 100%);
+  width: min(182px, 100%);
   align-items: center;
-  border-radius: 8px;
-  padding: 8px 10px;
+  border-radius: 6px;
+  padding: 4px 6px;
   background: linear-gradient(135deg, #d9f2a8, #9ed7e6);
 }
 
@@ -339,65 +339,122 @@ h1 {
 }
 
 .seal-copy {
-  color: var(--muted);
-  font-size: 0.84rem;
+  color: rgba(215, 208, 191, 0.82);
+  font-size: 0.72rem;
   line-height: 1.35;
   text-align: center;
 }
 
 .social-section {
   border-top: 1px solid var(--line-light);
-  background: var(--cream);
+  background:
+    linear-gradient(180deg, rgba(251, 245, 231, 0.98), rgba(239, 228, 201, 0.96)),
+    var(--cream);
   color: var(--ink);
-  padding: 20px 22px 18px;
+  padding: 24px 24px 22px;
 }
 
 .section-title {
   display: grid;
-  gap: 4px;
-  margin-bottom: 12px;
+  gap: 6px;
+  margin-bottom: 16px;
 }
 
 .section-title span {
-  font-size: 0.78rem;
-  font-weight: 850;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem;
+  font-weight: 500;
   letter-spacing: 0;
-  text-transform: uppercase;
 }
 
 .section-title small {
-  color: #667063;
-  font-size: 0.9rem;
+  color: #58635e;
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .social-list {
   display: grid;
-  gap: 9px;
+  gap: 10px;
 }
 
 .social-link {
+  position: relative;
   display: grid;
-  grid-template-columns: 48px 1fr auto;
-  gap: 13px;
+  grid-template-columns: 52px 1fr auto;
+  gap: 14px;
   align-items: center;
-  min-height: 66px;
-  border: 1px solid rgba(11, 17, 16, 0.1);
+  min-height: 78px;
+  overflow: hidden;
+  border: 1px solid rgba(11, 17, 16, 0.055);
   border-radius: 8px;
-  padding: 9px 12px 9px 9px;
-  background: rgba(255, 255, 255, 0.7);
+  padding: 13px 15px 13px 13px;
+  background:
+    linear-gradient(135deg, rgba(251, 245, 231, 0.82), rgba(239, 228, 201, 0.48)),
+    rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 10px 22px rgba(11, 17, 16, 0.045);
+}
+
+.social-link::before,
+.social-link::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.social-link::before {
+  inset: 14px auto 14px 0;
+  width: 3px;
+  border-radius: 0 999px 999px 0;
+  background: linear-gradient(180deg, var(--gold), var(--green-bright));
+  opacity: 0.72;
+}
+
+.social-link::after {
+  inset: 0 0 0 auto;
+  width: 94px;
+  background: linear-gradient(135deg, rgba(213, 168, 80, 0.18), transparent 66%);
+  clip-path: polygon(38% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.5;
+}
+
+.social-link > * {
+  position: relative;
+  z-index: 1;
 }
 
 .social-link:hover,
 .social-link:focus-visible {
-  border-color: rgba(166, 125, 54, 0.46);
-  background: var(--white);
+  border-color: rgba(213, 168, 80, 0.58);
+  background:
+    linear-gradient(135deg, #10231f, #0b1110),
+    var(--ink);
+  color: var(--cream);
+  box-shadow: 0 18px 36px rgba(11, 17, 16, 0.24);
   transform: translateX(2px);
+}
+
+.social-link:hover::before,
+.social-link:focus-visible::before {
+  opacity: 1;
+}
+
+.social-link:hover::after,
+.social-link:focus-visible::after {
+  opacity: 0.82;
+  transform: translateX(-4px);
 }
 
 .social-icon {
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   place-items: center;
   border: 1px solid rgba(213, 168, 80, 0.34);
   border-radius: 8px;
@@ -410,8 +467,8 @@ h1 {
 
 .social-icon svg {
   display: block;
-  width: 29px;
-  height: 29px;
+  width: 30px;
+  height: 30px;
   fill: currentColor;
 }
 
@@ -452,11 +509,17 @@ h1 {
 
 .social-link strong {
   font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.social-link:hover strong,
+.social-link:focus-visible strong {
+  color: var(--white);
 }
 
 .social-link small {
-  margin-top: 2px;
-  color: #667063;
+  margin-top: 3px;
+  color: #58635e;
   font-size: 0.88rem;
 }
 
@@ -466,15 +529,26 @@ h1 {
   color: var(--gold-muted);
 }
 
+.social-link:hover small,
+.social-link:focus-visible small {
+  color: rgba(251, 245, 231, 0.72);
+}
+
+.social-link:hover > svg,
+.social-link:focus-visible > svg {
+  color: var(--gold);
+}
+
 .footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid var(--line-dark);
-  background: var(--cream);
-  color: #667063;
-  padding: 16px 22px 20px;
-  font-size: 0.84rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--ink);
+  color: rgba(251, 245, 231, 0.72);
+  padding: 19px 24px 22px;
+  font-size: 0.82rem;
+  line-height: 1.45;
   text-align: center;
 }
 
@@ -539,15 +613,15 @@ h1 {
   }
 
   .hero {
-    padding: 24px 18px 20px;
+    padding: 26px 18px 22px;
   }
 
   h1 {
-    font-size: 2.42rem;
+    font-size: 2.18rem;
   }
 
   .hero p:last-child {
-    font-size: 0.98rem;
+    font-size: 0.94rem;
   }
 
   .actions,
@@ -570,28 +644,39 @@ h1 {
   }
 
   .service-card {
-    min-height: 72px;
-    grid-template-columns: 39px 1fr;
+    min-height: 70px;
+    grid-template-columns: 38px 1fr;
   }
 
   .service-card > svg {
-    width: 39px;
-    height: 39px;
+    width: 38px;
+    height: 38px;
     padding: 10px;
   }
 
   .cadastur-seal {
     margin-right: 18px;
     margin-left: 18px;
-    padding: 12px;
+    padding: 7px 10px 8px;
   }
 
   .social-section {
-    padding: 18px;
+    padding: 20px 18px 18px;
+  }
+
+  .social-link {
+    grid-template-columns: 50px 1fr auto;
+    min-height: 74px;
+    padding: 12px 13px 12px 12px;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
   }
 
   .footer {
-    padding: 15px 18px 18px;
+    padding: 18px 18px 20px;
   }
 
   .toast {
@@ -602,7 +687,7 @@ h1 {
 
 @media (max-width: 360px) {
   h1 {
-    font-size: 2.16rem;
+    font-size: 1.98rem;
   }
 
   .primary-action {

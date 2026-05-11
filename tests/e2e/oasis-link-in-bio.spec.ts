@@ -6,7 +6,10 @@ test.describe("Oasis link-in-bio", () => {
 
     await expect(page.locator('main[aria-label="Agregador de links da Oasis"]')).toBeVisible();
     await expect(page.locator(".site-home")).toHaveCount(0);
-    await expect(page.getByRole("heading", { name: "Viagens premium pelo caminho mais inteligente." })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "A forma mais tranquila de planejar uma grande viagem." }),
+    ).toBeVisible();
+    await expect(page.getByText("Viagens premium pelo caminho mais inteligente.")).toHaveCount(0);
     await expect(page.getByText("Um site que vende tranquilidade antes de vender destino.")).toHaveCount(0);
     await expect(page.getByText("WR3 Cybertech & Travel Solutions")).toHaveCount(0);
   });
@@ -23,7 +26,7 @@ test.describe("Oasis link-in-bio", () => {
       "https://linksoasis.wr3solutions.com",
     );
 
-    const whatsapp = page.getByRole("link", { name: /Solicitar cotação/i });
+    const whatsapp = page.getByRole("link", { name: /Solicitar planejamento/i });
     await expect(whatsapp).toHaveAttribute(
       "href",
       /https:\/\/wa\.me\/5541987711041\?text=Ol%C3%A1/,
@@ -44,13 +47,17 @@ test.describe("Oasis link-in-bio", () => {
     await expect(page.getByText("Atendimento rápido pelo WhatsApp")).toHaveCount(0);
 
     await expect(page.getByText("Melhor caminho")).toBeVisible();
-    await expect(page.getByText("Milhas, tarifas, operadoras e consolidadoras comparadas para você.")).toBeVisible();
+    await expect(
+      page.getByText("Estratégias inteligentes para você viajar melhor, com mais conforto e clareza."),
+    ).toBeVisible();
     await expect(page.getByText("Viagem sob medida")).toBeVisible();
-    await expect(page.getByText("Aéreo, hospedagem e experiências alinhadas ao seu perfil.")).toBeVisible();
-    await expect(page.getByText("Suporte humano")).toBeVisible();
+    await expect(
+      page.getByText("Voos, hospedagens e experiências alinhadas ao seu perfil e ao estilo da sua viagem."),
+    ).toBeVisible();
+    await expect(page.getByText("Suporte humano", { exact: true })).toBeVisible();
     await expect(page.getByText("Acompanhamento antes, durante e depois da viagem.")).toBeVisible();
 
-    await expect(page.getByText("Oasis | Viagens e Experiências")).toBeVisible();
+    await expect(page.getByText("Oasis | Viagens planejadas com inteligência e curadoria.")).toBeVisible();
     await expect(page.getByText("Copiar link")).toHaveCount(0);
   });
 
@@ -59,6 +66,10 @@ test.describe("Oasis link-in-bio", () => {
 
     await expect(page.locator('[aria-label="Empresa cadastrada no CADASTUR"]')).toBeVisible();
     await expect(page.getByText("Agência de turismo cadastrada no Ministério do Turismo")).toBeVisible();
+    await expect(page.getByText("Acompanhe a Oasis")).toBeVisible();
+    await expect(page.getByText("Inspirações, experiências e bastidores de viagem.")).toBeVisible();
+    await expect(page.getByText("REDES E CONTEÚDO")).toHaveCount(0);
+    await expect(page.getByText("destinos, dicas e novidades")).toHaveCount(0);
 
     await expect(page.getByRole("link", { name: /Instagram/i })).toHaveAttribute(
       "href",

@@ -6,30 +6,31 @@ const officialWebsiteUrl = "https://flypremium.com.br/oasis/";
 const publicUrl = process.env.NEXT_PUBLIC_SITE_URL ?? aggregatorUrl;
 const whatsappPhone = "5541987711041";
 const whatsappMessage =
-  "Olá, quero solicitar uma cotação de viagem com a Oasis. Podem me ajudar?";
+  "Olá, quero solicitar um planejamento de viagem com a Oasis. Podem me ajudar?";
 
 export const oasisConfig = {
   publicUrl,
   brand: {
     name: "Oasis | Viagens e Experiências",
     eyebrow: "Fly Premium Oasis",
+    footer: "Oasis | Viagens planejadas com inteligência e curadoria.",
     logoSrc: "/assets/oasis/logo.png",
     logoAlt: "Oasis",
   },
   seo: {
     title: "Oasis | Viagens e Experiências",
     description:
-      "Viagens premium pelo caminho mais inteligente: milhas, tarifas, operadoras e consolidadoras.",
+      "Planejamento personalizado de voos, hospedagens e experiências com suporte humano do início ao fim.",
     ogImage: "/og/oasis.png",
   },
   hero: {
-    title: "Viagens premium pelo caminho mais inteligente.",
+    title: "A forma mais tranquila de planejar uma grande viagem.",
     description:
-      "Cotamos sua viagem entre milhas, tarifas, operadoras e consolidadoras para encontrar a alternativa ideal para o seu perfil.",
+      "Planejamento personalizado de voos, hospedagens e experiências com suporte humano do início ao fim.",
   },
   actions: {
     whatsapp: {
-      label: "Solicitar cotação",
+      label: "Solicitar planejamento",
       description: "Atendimento pelo WhatsApp",
       href: `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessage)}`,
     },
@@ -41,12 +42,12 @@ export const oasisConfig = {
   services: [
     {
       title: "Melhor caminho",
-      description: "Milhas, tarifas, operadoras e consolidadoras comparadas para você.",
+      description: "Estratégias inteligentes para você viajar melhor, com mais conforto e clareza.",
       icon: "sparkles" as ServiceIcon,
     },
     {
       title: "Viagem sob medida",
-      description: "Aéreo, hospedagem e experiências alinhadas ao seu perfil.",
+      description: "Voos, hospedagens e experiências alinhadas ao seu perfil e ao estilo da sua viagem.",
       icon: "ticket" as ServiceIcon,
     },
     {
@@ -61,8 +62,8 @@ export const oasisConfig = {
     label: "Agência de turismo cadastrada no Ministério do Turismo",
   },
   socialIntro: {
-    title: "Redes e conteúdo",
-    description: "Acompanhe destinos, dicas e novidades",
+    title: "Acompanhe a Oasis",
+    description: "Inspirações, experiências e bastidores de viagem.",
   },
   socials: [
     {
@@ -98,7 +99,7 @@ export const oasisConfig = {
   ],
   share: {
     title: "Oasis | Viagens e Experiências",
-    text: "Viagens premium pelo caminho mais inteligente.",
+    text: "A forma mais tranquila de planejar uma grande viagem.",
   },
 } as const;
 
