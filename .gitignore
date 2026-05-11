@@ -18,3 +18,5 @@ meta-*.png
 chatwoot-*.png
 *.7z
 *.tsbuildinfo
+
+.vercel
