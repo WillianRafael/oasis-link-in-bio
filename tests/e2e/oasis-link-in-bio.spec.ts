@@ -36,7 +36,7 @@ test.describe("Oasis link-in-bio", () => {
 
     await expect(page.getByRole("link", { name: /Conhecer o site oficial/i })).toHaveAttribute(
       "href",
-      "https://flypremium.com.br/oasis/",
+      "https://oasisflypremium.wr3solutions.com/",
     );
   });
 

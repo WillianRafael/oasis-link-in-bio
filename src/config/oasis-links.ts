@@ -2,7 +2,7 @@ export type ServiceIcon = "sparkles" | "ticket" | "briefcase";
 export type SocialNetwork = "instagram" | "tiktok" | "youtube" | "x" | "linkedin";
 
 const aggregatorUrl = "https://linksoasis.wr3solutions.com";
-const officialWebsiteUrl = "https://flypremium.com.br/oasis/";
+const officialWebsiteUrl = "https://oasisflypremium.wr3solutions.com/";
 const publicUrl = process.env.NEXT_PUBLIC_SITE_URL ?? aggregatorUrl;
 const whatsappPhone = "5541987711041";
 const whatsappMessage =
