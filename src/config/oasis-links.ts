@@ -36,6 +36,7 @@ export const oasisConfig = {
     },
     website: {
       label: "Conhecer o site oficial",
+      description: "Veja a agência, serviços e experiências",
       href: officialWebsiteUrl,
     },
   },

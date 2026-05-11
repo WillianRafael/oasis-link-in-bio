@@ -9,6 +9,7 @@ type ActionLinksProps = {
     };
     website: {
       label: string;
+      description: string;
       href: string;
     };
   };
@@ -29,8 +30,13 @@ export function ActionLinks({ actions }: ActionLinksProps) {
       </a>
 
       <a className="secondary-action" href={actions.website.href} target="_blank" rel="noopener noreferrer">
-        <Globe2 aria-hidden="true" />
-        <span>{actions.website.label}</span>
+        <span className="action-icon secondary-icon">
+          <Globe2 aria-hidden="true" />
+        </span>
+        <span className="action-copy">
+          <strong>{actions.website.label}</strong>
+          <small>{actions.website.description}</small>
+        </span>
         <ArrowUpRight aria-hidden="true" />
       </a>
     </section>

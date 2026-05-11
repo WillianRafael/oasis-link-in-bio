@@ -38,6 +38,7 @@ test.describe("Oasis link-in-bio", () => {
       "href",
       "https://oasisflypremium.wr3solutions.com/",
     );
+    await expect(page.getByText("Veja a agência, serviços e experiências")).toBeVisible();
   });
 
   test("shows the final copy and useful service cards", async ({ page }) => {

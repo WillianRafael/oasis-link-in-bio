@@ -242,22 +242,55 @@ h1 {
 
 .secondary-action {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 12px;
+  grid-template-columns: 48px 1fr auto;
+  gap: 14px;
   align-items: center;
-  min-height: 58px;
-  border: 1px solid rgba(213, 168, 80, 0.38);
+  min-height: 76px;
+  border: 1px solid rgba(213, 168, 80, 0.58);
   border-radius: 8px;
-  padding: 14px 15px;
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--cream);
+  padding: 13px 14px;
+  background: linear-gradient(135deg, var(--cream), var(--cream-soft));
+  color: var(--ink);
   font-weight: 780;
+  box-shadow:
+    0 16px 32px rgba(213, 168, 80, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-.secondary-action svg {
+.secondary-action:hover,
+.secondary-action:focus-visible {
+  border-color: rgba(213, 168, 80, 0.84);
+  background: linear-gradient(135deg, var(--white), var(--cream-soft));
+  box-shadow:
+    0 18px 38px rgba(213, 168, 80, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.secondary-action .secondary-icon {
+  background: linear-gradient(135deg, var(--green), var(--green-bright));
+  color: var(--cream);
+  box-shadow: 0 12px 22px rgba(15, 93, 72, 0.18);
+}
+
+.secondary-action .action-copy strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.secondary-action .action-copy small {
+  color: #59635d;
+  font-size: 0.84rem;
+}
+
+.secondary-action > svg {
   width: 20px;
   height: 20px;
-  color: var(--gold);
+  color: var(--gold-muted);
+}
+
+.secondary-action:hover > svg,
+.secondary-action:focus-visible > svg {
+  color: var(--green);
 }
 
 .services {
@@ -638,6 +671,13 @@ h1 {
     padding: 13px;
   }
 
+  .secondary-action {
+    grid-template-columns: 44px 1fr auto;
+    gap: 12px;
+    min-height: 74px;
+    padding: 12px 13px;
+  }
+
   .action-icon {
     width: 44px;
     height: 44px;
@@ -691,6 +731,10 @@ h1 {
   }
 
   .primary-action {
+    grid-template-columns: 1fr auto;
+  }
+
+  .secondary-action {
     grid-template-columns: 1fr auto;
   }
 
