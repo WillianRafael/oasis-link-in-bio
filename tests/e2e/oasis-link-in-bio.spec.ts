@@ -14,6 +14,15 @@ test.describe("Oasis link-in-bio", () => {
   test("keeps the commercial links pointed to the right destinations", async ({ page }) => {
     await page.goto("/");
 
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      "https://linksoasis.wr3solutions.com",
+    );
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+      "content",
+      "https://linksoasis.wr3solutions.com",
+    );
+
     const whatsapp = page.getByRole("link", { name: /Solicitar cotação/i });
     await expect(whatsapp).toHaveAttribute(
       "href",
