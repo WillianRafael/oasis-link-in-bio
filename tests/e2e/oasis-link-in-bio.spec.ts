@@ -27,20 +27,16 @@ test.describe("Oasis link-in-bio", () => {
     );
 
     const whatsapp = page.getByRole("link", { name: /Solicitar planejamento/i });
-    await expect(whatsapp).toHaveAttribute(
-      "href",
-      /https:\/\/wa\.me\/5541987711041\?text=Ol%C3%A1/,
-    );
+    await expect(whatsapp).toHaveAttribute("href", /\/go\/whatsapp$/);
     await expect(whatsapp).toHaveAttribute("data-analytics-id", "whatsapp");
+    await expect(whatsapp).toHaveAttribute("data-destination-url", /https:\/\/wa\.me\/5541987711041/);
     await expect(whatsapp).toHaveAttribute("target", "_blank");
     await expect(whatsapp).toHaveAttribute("rel", "noopener noreferrer");
 
     const officialSite = page.getByRole("link", { name: /Conhecer o site oficial/i });
-    await expect(officialSite).toHaveAttribute(
-      "href",
-      "https://oasisflypremium.wr3solutions.com/",
-    );
+    await expect(officialSite).toHaveAttribute("href", /\/go\/official-site$/);
     await expect(officialSite).toHaveAttribute("data-analytics-id", "official_site");
+    await expect(officialSite).toHaveAttribute("data-destination-url", "https://oasisflypremium.wr3solutions.com/");
     await expect(page.getByText("Veja a agência, serviços e experiências")).toBeVisible();
   });
 
@@ -76,27 +72,40 @@ test.describe("Oasis link-in-bio", () => {
     await expect(page.getByText("destinos, dicas e novidades")).toHaveCount(0);
 
     await expect(page.getByRole("link", { name: /Instagram/i })).toHaveAttribute(
-      "href",
+      "data-destination-url",
       "https://www.instagram.com/flypremium.oasis",
     );
     await expect(page.getByRole("link", { name: /Instagram/i })).toHaveAttribute("data-analytics-id", "instagram");
     await expect(page.getByRole("link", { name: /TikTok/i })).toHaveAttribute(
-      "href",
+      "data-destination-url",
       "https://www.tiktok.com/@flypremium.oasis",
     );
     await expect(page.getByRole("link", { name: /TikTok/i })).toHaveAttribute("data-analytics-id", "tiktok");
     await expect(page.getByRole("link", { name: /YouTube/i })).toHaveAttribute(
-      "href",
+      "data-destination-url",
       "https://www.youtube.com/@FlyPremiumOasis?sub_confirmation=1",
     );
     await expect(page.getByRole("link", { name: /YouTube/i })).toHaveAttribute("data-analytics-id", "youtube");
-    await expect(page.getByRole("link", { name: /^X/i })).toHaveAttribute("href", "https://x.com/flypremiumoasis");
+    await expect(page.getByRole("link", { name: /^X/i })).toHaveAttribute(
+      "data-destination-url",
+      "https://x.com/flypremiumoasis",
+    );
     await expect(page.getByRole("link", { name: /^X/i })).toHaveAttribute("data-analytics-id", "x");
     await expect(page.getByRole("link", { name: /LinkedIn/i })).toHaveAttribute(
-      "href",
+      "data-destination-url",
       "https://www.linkedin.com/in/flypremium-oasis/",
     );
     await expect(page.getByRole("link", { name: /LinkedIn/i })).toHaveAttribute("data-analytics-id", "linkedin");
+  });
+
+  test("exposes free click-tracking redirect routes", async ({ page }) => {
+    await page.goto("/go/official-site");
+
+    await expect(page.getByRole("heading", { name: "Abrindo Conhecer o site oficial" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Continuar agora" })).toHaveAttribute(
+      "href",
+      "https://oasisflypremium.wr3solutions.com/",
+    );
   });
 
   test("does not overflow horizontally on a narrow mobile viewport", async ({ page }) => {

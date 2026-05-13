@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
+import { getTrackedLinkPath } from "@/config/oasis-tracked-links";
 import type { OasisConfig } from "@/config/oasis-links";
 import { ActionLinks } from "./ActionLinks";
 import { CadasturSeal } from "./CadasturSeal";
@@ -18,7 +19,7 @@ export function ProfileCard({ config }: ProfileCardProps) {
       <div className="profile-top">
         <TrackedLink
           className="logo-link"
-          href={config.actions.website.href}
+          href={getTrackedLinkPath("logo")}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Abrir site da Oasis"

@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
+import { getTrackedLinkPath } from "@/config/oasis-tracked-links";
 import type { SocialNetwork } from "@/config/oasis-links";
 
 type SocialLinksProps = {
@@ -76,7 +77,7 @@ export function SocialLinks({ intro, socials }: SocialLinksProps) {
         {socials.map((social) => (
           <TrackedLink
             className="social-link"
-            href={social.href}
+            href={getTrackedLinkPath(social.network)}
             target="_blank"
             rel="noopener noreferrer"
             key={social.network}

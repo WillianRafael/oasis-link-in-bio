@@ -1,5 +1,6 @@
 import { ArrowUpRight, Globe2, MessageCircle } from "lucide-react";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
+import { getTrackedLinkPath } from "@/config/oasis-tracked-links";
 
 type ActionLinksProps = {
   actions: {
@@ -21,7 +22,7 @@ export function ActionLinks({ actions }: ActionLinksProps) {
     <section className="actions" aria-label="Ações principais">
       <TrackedLink
         className="primary-action"
-        href={actions.whatsapp.href}
+        href={getTrackedLinkPath("whatsapp")}
         target="_blank"
         rel="noopener noreferrer"
         analytics={{
@@ -44,7 +45,7 @@ export function ActionLinks({ actions }: ActionLinksProps) {
 
       <TrackedLink
         className="secondary-action"
-        href={actions.website.href}
+        href={getTrackedLinkPath("official-site")}
         target="_blank"
         rel="noopener noreferrer"
         analytics={{

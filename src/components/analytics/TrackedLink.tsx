@@ -27,9 +27,14 @@ export function TrackedLink({ analytics, children, href, onClick, ...props }: Tr
   }
 
   return (
-    <a href={href} data-analytics-id={analytics.linkId} onClick={handleClick} {...props}>
+    <a
+      href={href}
+      data-analytics-id={analytics.linkId}
+      data-destination-url={analytics.linkUrl}
+      onClick={handleClick}
+      {...props}
+    >
       {children}
     </a>
   );
 }
-
