@@ -121,4 +121,18 @@ test.describe("Oasis link-in-bio", () => {
 
     expect(viewport.scrollWidth).toBeLessThanOrEqual(viewport.clientWidth + 1);
   });
+
+  test("publishes crawler files for Google", async ({ request }) => {
+    const robots = await request.get("/robots.txt");
+    await expect(robots).toBeOK();
+    const robotsText = await robots.text();
+    expect(robotsText).toContain("Sitemap: https://linksoasis.wr3solutions.com/sitemap.xml");
+    expect(robotsText).toContain("Disallow: /go/");
+
+    const sitemap = await request.get("/sitemap.xml");
+    await expect(sitemap).toBeOK();
+    const sitemapText = await sitemap.text();
+    expect(sitemapText).toContain("<loc>https://linksoasis.wr3solutions.com</loc>");
+    expect(sitemapText).not.toContain("/go/");
+  });
 });
