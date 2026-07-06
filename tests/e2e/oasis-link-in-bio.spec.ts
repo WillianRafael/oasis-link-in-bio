@@ -108,6 +108,8 @@ test.describe("Oasis link-in-bio", () => {
   test("exposes free click-tracking redirect routes", async ({ page }) => {
     await page.goto("/go/official-site");
 
+    await expect(page.getByText("Oasis | Viagens Premium Planejadas")).toBeVisible();
+    await expect(page.getByText("Fly Premium Oasis")).toHaveCount(0);
     await expect(page.getByRole("heading", { name: "Abrindo Conhecer o site oficial" })).toBeVisible();
     await expect(page.getByRole("link", { name: "Continuar agora" })).toHaveAttribute(
       "href",
