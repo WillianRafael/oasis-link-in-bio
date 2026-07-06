@@ -6,8 +6,15 @@ test.describe("Oasis link-in-bio", () => {
 
     await expect(page.locator('main[aria-label="Agregador de links da Oasis"]')).toBeVisible();
     await expect(page.locator(".site-home")).toHaveCount(0);
+    await expect(page.getByText("Oasis | Viagens Premium Planejadas")).toBeVisible();
+    await expect(page.getByText("Fly Premium Oasis")).toHaveCount(0);
     await expect(
       page.getByRole("heading", { name: "A forma mais tranquila de planejar uma grande viagem." }),
+    ).toBeVisible();
+    await expect(
+      page.getByText(
+        "Planejamento personalizado de voos, hospedagens e experiências com curadoria, inteligência de milhas e suporte humano do início ao fim.",
+      ),
     ).toBeVisible();
     await expect(page.getByText("Viagens premium pelo caminho mais inteligente.")).toHaveCount(0);
     await expect(page.getByText("Um site que vende tranquilidade antes de vender destino.")).toHaveCount(0);

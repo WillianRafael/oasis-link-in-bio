@@ -12,7 +12,7 @@ export const oasisConfig = {
   publicUrl,
   brand: {
     name: "Oasis | Viagens e Experiências",
-    eyebrow: "Fly Premium Oasis",
+    eyebrow: "Oasis | Viagens Premium Planejadas",
     footer: "Oasis | Viagens planejadas com inteligência e curadoria.",
     logoSrc: "/assets/oasis/logo.png",
     logoAlt: "Oasis",
@@ -20,13 +20,13 @@ export const oasisConfig = {
   seo: {
     title: "Oasis | Viagens e Experiências",
     description:
-      "Planejamento personalizado de voos, hospedagens e experiências com suporte humano do início ao fim.",
+      "Planejamento personalizado de voos, hospedagens e experiências com curadoria, inteligência de milhas e suporte humano do início ao fim.",
     ogImage: "/og/oasis.png",
   },
   hero: {
     title: "A forma mais tranquila de planejar uma grande viagem.",
     description:
-      "Planejamento personalizado de voos, hospedagens e experiências com suporte humano do início ao fim.",
+      "Planejamento personalizado de voos, hospedagens e experiências com curadoria, inteligência de milhas e suporte humano do início ao fim.",
   },
   actions: {
     whatsapp: {
