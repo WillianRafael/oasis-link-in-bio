@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { oasisConfig } from "@/config/oasis-links";
 import { trackAnalyticsEvent } from "@/lib/analytics";
 
 type RedirectToExternalLinkProps = {
@@ -30,7 +31,7 @@ export function RedirectToExternalLink({ destination }: RedirectToExternalLinkPr
   return (
     <main className="page redirect-page" aria-label="Redirecionamento de link da Oasis">
       <section className="redirect-card">
-        <p className="eyebrow">Fly Premium Oasis</p>
+        <p className="eyebrow">{oasisConfig.brand.eyebrow}</p>
         <h1>Abrindo {destination.label}</h1>
         <p>Você será redirecionado em instantes.</p>
         <a href={destination.href} rel="noopener noreferrer">
@@ -40,4 +41,3 @@ export function RedirectToExternalLink({ destination }: RedirectToExternalLinkPr
     </main>
   );
 }
-
